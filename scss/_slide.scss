@@ -1,0 +1,79 @@
+.slideFade {
+  width: 1000px;
+  height: 400px;
+  overflow: hidden;
+  margin: 50px auto;
+  position: relative;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(#000, 0.5);
+
+  li {
+    @include posFull;
+    display: none;
+
+    img {
+      object-fit: cover;
+      height: 100%;
+    }
+  }
+}
+
+.slideSliding {
+  width: 1000px;
+  height: 400px;
+  overflow: hidden;
+  margin: 50px auto;
+  position: relative;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(#000, 0.5);
+
+  .lists {
+    display: flex;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+  }
+
+  li {
+    img {
+      object-fit: cover;
+      height: 100%;
+    }
+  }
+}
+
+.pager {
+  @include xCenter(no);
+  padding: 10px;
+  border-radius: 2px;
+  background-color: $bg;
+  color: #fff;
+  transition: 0.4s;
+  border: 1px solid rgba(white, 0.1);
+  &:hover {
+    background-color: $red;
+  }
+  &.prev {
+    left: 20px;
+  }
+
+  &.next {
+    right: 20px;
+  }
+}
+
+.indicator {
+  @include xCenter;
+  bottom: 20px;
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+
+  button {
+    @include circle;
+    &.on {
+      background-color: $red;
+    }
+  }
+}

@@ -1,0 +1,31 @@
+.ani-1 {
+    margin:50px;
+    li {
+        border:1px solid #ddd;
+        border-radius:20px; 
+        padding:20px;
+        position:relative;
+        width:250px;
+        height:100px;
+        overflow:hidden;
+
+        margin:10px 0;
+
+        .bg {
+            position:absolute;
+            left:0;top:0;bottom:0;
+            width:0;
+            // transition:width 0.5s;
+            background-color:rgb(199, 205, 255);
+        }
+
+        .bg + span {
+            position:relative;
+            color:#fff;
+        }
+
+         
+    }
+}
+
+p.test {color:#fff;font-size:20px;}

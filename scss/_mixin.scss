@@ -1,0 +1,55 @@
+@function unitCheck($size) {
+  $status: unitless($size);
+  @if $status {
+    $size: #{$size}px;
+  }
+  @return $size;
+}
+
+@mixin flex($j: space-between, $a: center, $g: 0) {
+  $g: unitCheck($g);
+  display: flex;
+  align-items: $a;
+  justify-content: $j;
+  gap: $g;
+}
+
+@mixin posCenter($p: absolute) {
+  position: $p;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin posFull($p: absolute) {
+  position: $p;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+}
+
+@mixin xCenter($way: null, $p: absolute) {
+  position: $p;
+  @if $way == null {
+    left: 50%;
+    transform: translateX(-50%);
+  } @else {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+@mixin circle($size: 10, $color: #fff) {
+  $size: unitCheck($size);
+  width: $size;
+  height: $size;
+  border-radius: 50%;
+  background-color: rgba($color, 0.8);
+}
+
+@mixin flexCenter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

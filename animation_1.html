@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/common.css" />
+    <script src="https://code.jquery.com/jquery-2.1.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+</head>
+<body>
+    <ul class="acd">
+        <li>
+            
+        </li>
+    </ul>
+
+    <ul class="ani-1">
+        <li><span class="bg"></span><span>TAB 1</span></li>
+        <li><span class="bg"></span><span>TAB 2</span></li>
+        <li><span class="bg"></span><span>TAB 3</span></li>
+      
+    </ul>
+    <p class="test">HELLO <span>WORLD</span></p>
+    <script>
+        function changeColor() {
+            const $p = $(".test");
+
+            $p.click(function(e) {
+                $(this).find('span').css({
+                    fontSize: '30px',
+                    color:'red'
+                })
+
+            })
+        }
+
+        function wide() {
+            const $li = $(".ani-1 li");
+            const duration = 500; 
+            $li.mouseenter(function(e) { 
+                $(this).find(".bg").stop().animate({
+                    width : '100%',
+                    backgroundColor : 'maroon'
+                }, duration,  "easeOutExpo");
+            })
+            $li.mouseleave(function(e) { 
+                $(this).find(".bg").stop().animate({
+                    width : 0,
+                    backgroundColor : 'white'
+                }, duration,  "easeOutExpo");
+                
+            })
+        }
+
+        changeColor();
+        wide();
+    </script>
+</body>
+</html>
